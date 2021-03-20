@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // for MacOS
+            "name": "(lldb) Launch exe",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/Main.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "preLaunchTask": "make",
+            "MIMode": "lldb"
+        },
+        {
+            // for Linux
+            "name": "(gdb) Launch cunit",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/main.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "preLaunchTask": "build cunit",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
